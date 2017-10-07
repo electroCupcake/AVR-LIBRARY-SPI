@@ -3,7 +3,7 @@
  *
  *  Created on: Oct 20, 2015
  *      Author: jconvertino
- * 
+ *
     Copyright (C) 2015 John Convertino
 
     This program is free software; you can redistribute it and/or modify
@@ -27,8 +27,13 @@
 
 #include "spi.h"
 
-void spiInit(uint8_t mode, uint8_t clkRate, uint8_t clkDouble)
+void initSpi(uint8_t mode, uint8_t clkRate, uint8_t clkDouble)
 {
+	uint8_t tmpSREG = 0;
+
+	tmpSREG = SREG;
+	cli();
+
 	SPCR = 0;
 
 	switch(mode)
@@ -47,6 +52,8 @@ void spiInit(uint8_t mode, uint8_t clkRate, uint8_t clkDouble)
 			SPCR |= (1 << SPE);
 			break;
 	}
+
+	SREG = tmpSREG;
 }
 
 void spiSettings(uint8_t mode, uint8_t endian)

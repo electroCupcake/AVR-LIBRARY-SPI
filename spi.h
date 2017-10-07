@@ -3,8 +3,8 @@
  *
  *  Created on: Oct 20, 2015
  *      Author: jconvertino
- * 
-    
+ *
+
     Copyright (C) 2015 John Convertino
 
     This program is free software; you can redistribute it and/or modify
@@ -58,7 +58,7 @@
 #define DOUBLE_SPD 	1
 
 //will default to MSB first, ISR interrupt disabled, and SPI_MODE_0
-void spiInit(uint8_t mode, uint8_t clkRate, uint8_t clkDouble);
+void initSPI(uint8_t mode, uint8_t clkRate, uint8_t clkDouble);
 
 void spiSettings(uint8_t mode, uint8_t endian);
 
