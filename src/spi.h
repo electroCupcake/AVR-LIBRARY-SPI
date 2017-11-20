@@ -64,9 +64,9 @@ void spiSettings(uint8_t mode, uint8_t endian);
 
 uint8_t spiTrans(uint8_t data);
 
-void slaveLow(volatile uint8_t *pinPort, uint8_t pinNum);
+void spiSlaveLow(volatile uint8_t *pinPort, uint8_t pinNum);
 
-void slaveHigh(volatile uint8_t *pinPort, uint8_t pinNum);
+void spiSlaveHigh(volatile uint8_t *pinPort, uint8_t pinNum);
 
 void spiIsr_Enabled();
 

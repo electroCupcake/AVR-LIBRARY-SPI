@@ -82,12 +82,12 @@ uint8_t spiTrans(uint8_t data)
 	return SPDR;
 }
 
-void slaveLow(volatile uint8_t *pinPort, uint8_t pinNum)
+void spiSlaveLow(volatile uint8_t *pinPort, uint8_t pinNum)
 {
 	*pinPort &= ~(1 << pinNum);
 }
 
-void slaveHigh(volatile uint8_t *pinPort, uint8_t pinNum)
+void spiSlaveHigh(volatile uint8_t *pinPort, uint8_t pinNum)
 {
 	*pinPort |= (1 << pinNum);
 }
